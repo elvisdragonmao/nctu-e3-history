@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E3 的二十六年</title>
+<meta name="description" content="交大／陽明交大 E3 數位教學平台沿革：從 2000 年的 E.NCTU 到 2024 年的 e3p，六代系統的時間軸、截圖與版本。">
+<style>
+:root{
+  color-scheme:light;
+  --page:#f9f9f7; --surface:#fcfcfb; --raised:#ffffff;
+  --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --ring:rgba(11,11,11,.10);
+  --accent:#2a78d6; --accent-ink:#1c5cab;
+  --fam-ecampus:#2a78d6; --fam-moodle:#eb6834; --fam-self:#1baf7a; --fam-other:#eda100;
+  --ord-0:#86b6ef; --ord-1:#5598e7; --ord-2:#2a78d6; --ord-3:#1c5cab; --ord-4:#104281;
+  --good:#0ca30c; --critical:#d03b3b;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.05);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --page:#0d0d0d; --surface:#1a1a19; --raised:#20201e;
+    --ink:#f0efec; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+    --accent:#6da7ec; --accent-ink:#9ec5f4;
+    --fam-ecampus:#3987e5; --fam-moodle:#d95926; --fam-self:#199e70; --fam-other:#c98500;
+    --ord-0:#9ec5f4; --ord-1:#6da7ec; --ord-2:#3987e5; --ord-3:#256abf; --ord-4:#184f95;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --page:#0d0d0d; --surface:#1a1a19; --raised:#20201e;
+  --ink:#f0efec; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+  --accent:#6da7ec; --accent-ink:#9ec5f4;
+  --fam-ecampus:#3987e5; --fam-moodle:#d95926; --fam-self:#199e70; --fam-other:#c98500;
+  --ord-0:#9ec5f4; --ord-1:#6da7ec; --ord-2:#3987e5; --ord-3:#256abf; --ord-4:#184f95;
+  --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--page);color:var(--ink);
+  font:16px/1.7 system-ui,-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei","Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--accent-ink)}
+code{font:0.88em/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--grid);padding:1px 5px;border-radius:4px;word-break:break-all}
+.wrap{max-width:1160px;margin:0 auto;padding:0 16px}
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--page) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--ring)}
+header.top .wrap{display:flex;align-items:center;gap:16px;height:52px}
+header.top .brand{font-weight:650;letter-spacing:.01em;white-space:nowrap}
+header.top nav{display:flex;gap:16px;overflow-x:auto;flex:1;scrollbar-width:none}
+header.top nav::-webkit-scrollbar{display:none}
+header.top nav a{color:var(--ink-2);text-decoration:none;font-size:14px;white-space:nowrap}
+header.top nav a:hover{color:var(--ink)}
+.theme-btn{border:1px solid var(--ring);background:var(--raised);color:var(--ink-2);border-radius:8px;padding:4px 10px;font:inherit;font-size:13px;cursor:pointer;white-space:nowrap}
+.hero{padding:56px 0 28px}
+.hero .eyebrow{color:var(--muted);font-size:14px;letter-spacing:.04em}
+.hero h1{font-size:clamp(32px,6vw,54px);line-height:1.12;margin:8px 0 16px;letter-spacing:-.01em}
+.hero p.lede{font-size:clamp(16px,2.2vw,19px);color:var(--ink-2);max-width:760px;margin:0}
+.lineage{display:flex;flex-wrap:wrap;align-items:center;gap:6px 4px;margin:28px 0 0;padding:0;list-style:none}
+.lineage li{display:flex;align-items:center;gap:4px}
+.lineage button{font:inherit;font-size:14px;border:1px solid var(--ring);background:var(--raised);color:var(--ink);border-radius:999px;padding:5px 12px 5px 10px;cursor:pointer;display:flex;align-items:center;gap:7px}
+.lineage button:hover{border-color:var(--axis)}
+.lineage .sw{width:9px;height:9px;border-radius:50%}
+.lineage .arrow{color:var(--muted);font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:32px 0 0}
+.stat{background:var(--surface);border:1px solid var(--ring);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+.stat .v{font-size:30px;font-weight:650;line-height:1.1}
+.stat .k{color:var(--ink-2);font-size:14px;margin-top:6px}
+section.block{padding:44px 0 8px;scroll-margin-top:60px}
+section.block>h2{font-size:26px;margin:0 0 6px;letter-spacing:-.005em}
+section.block>p.sub{color:var(--ink-2);margin:0 0 20px;max-width:780px}
+.panel{background:var(--surface);border:1px solid var(--ring);border-radius:14px;box-shadow:var(--shadow)}
+.chart-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.chart-pad{padding:16px 16px 10px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;padding:12px 16px 0;font-size:13px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{display:inline-block;width:14px;height:10px;border-radius:3px}
+.legend i.hatch{background:repeating-linear-gradient(135deg,var(--muted) 0 2px,transparent 2px 5px);border:1px solid var(--axis)}
+svg text{font-family:system-ui,-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif}
+.tip{position:fixed;z-index:50;pointer-events:none;background:var(--raised);color:var(--ink);border:1px solid var(--ring);
+  border-radius:10px;padding:9px 12px;font-size:13px;line-height:1.5;box-shadow:0 6px 24px rgba(0,0,0,.14);max-width:290px;opacity:0;transition:opacity .08s}
+.tip b{font-weight:650}
+.tip .m{color:var(--ink-2)}
+.tip .sw{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.note{font-size:13px;color:var(--muted);padding:0 16px 14px}
+/* browser */
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:4px 0 14px;scrollbar-width:thin}
+.tab{font:inherit;font-size:14px;border:1px solid var(--ring);background:var(--raised);color:var(--ink-2);border-radius:10px;padding:8px 14px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.tab .sw{width:8px;height:8px;border-radius:50%}
+.tab[aria-selected="true"]{color:var(--ink);border-color:var(--ink);font-weight:600}
+.viewer{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px}
+@media (max-width:900px){.viewer{grid-template-columns:1fr}}
+.stage{padding:14px}
+.frame{background:var(--page);border:1px solid var(--ring);border-radius:10px;overflow:auto;max-height:72vh;position:relative}
+.frame img{display:block;width:100%;height:auto}
+.frame-bar{display:flex;align-items:center;gap:10px;margin:12px 2px 0;flex-wrap:wrap}
+.nav-btn{font:inherit;font-size:14px;border:1px solid var(--ring);background:var(--raised);color:var(--ink);border-radius:8px;width:36px;height:34px;cursor:pointer;flex:none}
+.nav-btn:disabled{opacity:.35;cursor:default}
+.cap{flex:1;min-width:200px}
+.cap .d{font-variant-numeric:tabular-nums;font-weight:650;margin-right:8px}
+.cap .src{font-size:13px;display:block;margin-top:2px;word-break:break-all}
+.scrub{display:flex;gap:6px;flex-wrap:wrap;margin:12px 2px 0}
+.scrub button{font:inherit;font-size:12px;font-variant-numeric:tabular-nums;border:1px solid var(--ring);background:transparent;color:var(--ink-2);border-radius:6px;padding:2px 8px;cursor:pointer}
+.scrub button[aria-current="true"]{background:var(--ink);color:var(--page);border-color:var(--ink)}
+.facts{padding:18px 18px 16px}
+.facts .logo{height:44px;display:flex;align-items:center;margin-bottom:12px}
+.facts .logo img{max-height:44px;max-width:100%;border-radius:4px;background:#fff;padding:2px}
+.facts h3{margin:0;font-size:21px}
+.facts .host{margin:4px 0 0}
+.facts dl{margin:14px 0 0;display:grid;grid-template-columns:44px 1fr;gap:6px 10px;font-size:14px}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0}
+.facts h4{margin:16px 0 6px;font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.04em}
+.facts ul{margin:0;padding-left:18px;font-size:14px}
+.facts li{margin:3px 0}
+.facts ul.paths{list-style:none;padding:0}
+.facts ul.paths li{font:12.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink-2);word-break:break-all}
+.toggle-table{font:inherit;font-size:13px;border:1px solid var(--ring);background:var(--raised);color:var(--ink-2);border-radius:8px;padding:4px 10px;cursor:pointer;margin:0 16px 14px}
+table.data{border-collapse:collapse;width:100%;font-size:14px}
+table.data th,table.data td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--grid);vertical-align:top}
+table.data th{color:var(--muted);font-weight:600;font-size:13px}
+table.data td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.table-wrap{overflow-x:auto;padding:0 4px 8px}
+.status{display:inline-flex;align-items:center;gap:6px;font-weight:600;white-space:nowrap}
+.status svg{flex:none}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.two .panel{padding:18px 20px}
+.two h3{margin:0 0 10px;font-size:17px}
+.two ul{margin:0;padding-left:18px}
+.two li{margin:6px 0}
+.verdict{margin:16px 0 0;padding:14px 18px;border-left:3px solid var(--accent);background:var(--surface);border-radius:0 10px 10px 0;color:var(--ink-2)}
+ol.unknown{padding-left:22px;max-width:820px}
+ol.unknown li{margin:6px 0}
+.sources{columns:2 360px;column-gap:28px;font-size:14px;padding:0;list-style:none}
+.sources li{break-inside:avoid;margin:0 0 10px}
+.sources a{word-break:break-all}
+footer{color:var(--muted);font-size:13px;padding:40px 0 56px;border-top:1px solid var(--ring);margin-top:48px}
+.callout{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--ring);border-radius:12px;padding:14px 16px;margin:0 0 16px}
+.callout svg{flex:none;margin-top:3px}
+.swipe-hint{display:none;font-size:12px;color:var(--muted);padding:10px 16px 0}
+@media (max-width:760px){
+  .swipe-hint{display:block}
+  #aliveTable table,#aliveTable tbody,#aliveTable tr,#aliveTable td{display:block;width:100%}
+  #aliveTable thead{display:none}
+  #aliveTable tr{padding:12px 4px;border-bottom:1px solid var(--grid)}
+  #aliveTable td{border:0;padding:2px 8px}
+  #aliveTable code{word-break:normal;overflow-wrap:anywhere}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <span class="brand">E3 沿革</span>
+  <nav aria-label="章節">
+    <a href="#timeline">時間軸</a><a href="#versions">版本瀏覽</a><a href="#builds">eCampus III 版本</a>
+    <a href="#moodle">Moodle 版本</a><a href="#alive">現況</a><a href="#disputes">疑點</a><a href="#sources">來源</a>
+  </nav>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="切換深淺色">自動</button>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">國立交通大學 → 國立陽明交通大學 · 2000–2026</div>
+    <h1>E3 的二十六年</h1>
+    <p class="lede">從理學院自己寫的 PHP 網站，到 ASP.NET 的 eCampus，再到三代 Moodle。「E3」原本是 <b>eCampus III</b> 的簡稱，系統換了好幾輪，名字一直留著。</p>
+    <ol class="lineage" id="lineage"></ol>
+    <div class="stats" id="stats"></div>
+  </section>
+
+  <section class="block" id="timeline">
+    <h2>時間軸</h2>
+    <p class="sub">每一列是一個平台。實心段是它當主平台的期間；斜線段表示已經不是主平台，但伺服器或存檔還看得到。點一下交大那幾列，可以跳到該代的截圖。</p>
+    <div class="panel">
+      <div class="legend" id="ganttLegend"></div>
+      <div class="swipe-hint">← 圖表可左右滑動 →</div><div class="chart-scroll"><div class="chart-pad" id="gantt"></div></div>
+      <div class="note">日期依據：存檔中第一則公告或第一筆存檔、官方停用公告、最後一筆正常存檔。e3.nycu 和 e3p 畫到 2026-10-16（實測日）。</div>
+    </div>
+  </section>
+
+  <section class="block" id="versions">
+    <h2>版本瀏覽</h2>
+    <p class="sub">每一代依時間排列的存檔截圖。可以用左右方向鍵切換，點「來源」能開啟原始的 Wayback 存檔。</p>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="viewer">
+      <div class="panel stage">
+        <div class="frame" id="frame"><img id="shot" alt=""></div>
+        <div class="frame-bar">
+          <button class="nav-btn" id="prev" type="button" aria-label="上一張">←</button>
+          <div class="cap" id="cap"></div>
+          <button class="nav-btn" id="next" type="button" aria-label="下一張">→</button>
+        </div>
+        <div class="scrub" id="scrub"></div>
+      </div>
+      <aside class="panel facts" id="facts"></aside>
+    </div>
+  </section>
+
+  <section class="block" id="builds">
+    <h2>eCampus III 的 60 個版本</h2>
+    <p class="sub">舊 E3 會把版本號寫在頁面標題裡。每個點是 Wayback 存到的一個不同 build，橫軸是存檔日期。2006–2009 年常常幾天就出一版；2013-02-19 建置的 <code>v1.5.02193.01450</code> 之後就再也沒有新版本，一直用到 2019 年下線。</p>
+    <div class="panel">
+      <div class="swipe-hint">← 圖表可左右滑動 →</div><div class="chart-scroll"><div class="chart-pad" id="buildChart"></div></div>
+      <button class="toggle-table" type="button" data-target="buildTable">以表格檢視</button>
+      <div class="table-wrap" id="buildTable" hidden></div>
+    </div>
+  </section>
+
+  <section class="block" id="moodle">
+    <h2>Moodle 版本演進</h2>
+    <p class="sub">2017 年之後的三個站都是 Moodle。版本號沒有公開；這裡是拿登入頁 <code>M.cfg</code> 的設定鍵集合和 YUI 版本，去和 Moodle 各分支原始碼比對推得的範圍。分段的交界只能確定落在兩筆存檔之間，圖上取中點。</p>
+    <div class="panel">
+      <div class="swipe-hint">← 圖表可左右滑動 →</div><div class="chart-scroll"><div class="chart-pad" id="moodleChart"></div></div>
+      <div class="note">顏色越深代表版本越新。e3p 是另外建的新站，不是把 e3.nycu 原地升級：兩台主機的 IP、佈景、Moodle 主版本都不同。</div>
+    </div>
+  </section>
+
+  <section class="block" id="alive">
+    <h2>現在還活著的</h2>
+    <p class="sub">2026-10-16 實測。除了猜主機名之外，也把憑證透明度紀錄裡的 3,349 個主機名（nycu 2,129、nctu 1,144、ym 76）全部打過一次 HTTP 和 HTTPS。</p>
+    <div class="callout">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 1.5 17 16H1z" fill="none" stroke="var(--critical)" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 7v4M9 13.2v.1" stroke="var(--critical)" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <div><b>e3.nycu.edu.tw 的 TLS 憑證 2026-10-20 到期。</b> e3p 和 eportfolio 都在 10 月初換了新憑證，只有它沒換，可能快要退役了。</div>
+    </div>
+    <div class="panel"><div class="table-wrap" id="aliveTable"></div></div>
+    <p class="note" style="padding:10px 0 0">限制：e3、e3p 用的是 <code>*.nycu.edu.tw</code> 萬用字元憑證，不會以自己的名字出現在憑證紀錄裡，所以全量掃描看不到這類主機；e3.nycu 是靠猜主機名才找到的。</p>
+  </section>
+
+  <section class="block" id="disputes">
+    <h2>疑點：舊 E3 是誰寫的？</h2>
+    <p class="sub">存檔裡兩種證據都有。</p>
+    <div class="two">
+      <div class="panel"><h3>三趨科技（3Probe）的產品</h3><ul>
+        <li>三趨官網沿革：2006 年「eCampus Version 3.0 (E3) 非同步網路學習平台上線」「陽明大學eCampus建置上線」</li>
+        <li>陽明 <code>e3.ym.edu.tw</code> 登入頁寫「Copyright (R) 2006 3Probe」，標題也是 <code>eCampus III v1.1…</code></li>
+        <li>陽明 2006–07 年的登入頁還直接沿用印著「國立交通大學」的版權圖</li>
+        <li>三趨 2002 年也做過交大、陽明等「e-Campus 五校聯合網路學習平台」，E2 很可能就是這套</li>
+      </ul></div>
+      <div class="panel"><h3>數位內容製作中心自行開發</h3><ul>
+        <li>交大 E3 的版權圖寫「版權所有 國立交通大學 Copyright © 2006」，存檔裡找不到任何廠商名稱</li>
+        <li>DCPC 的服務項目寫著「網路教學平台的<b>開發</b>與維運」</li>
+        <li>公告署名「數位內容製作中心 e3團隊」</li>
+        <li>build 非常頻繁，有時幾天一版，而且持續了七年</li>
+      </ul></div>
+    </div>
+    <p class="verdict">推測：核心是三趨的 eCampus 3.0，交大版本由 DCPC 掛校方版權，並長期客製與建置。可以查政府電子採購網 2005–2006 年的決標紀錄，或 94–95 學年度的教務會議紀錄來確認。</p>
+    <h3 style="margin:32px 0 6px;font-size:19px">還沒解開的</h3>
+    <ol class="unknown">
+      <li>e3p 的「p」是什麼意思。舊 E3 從 2009 年起路徑就叫 <code>NCTU_E3P</code>，陽明 eCampus 有 <code>ecampus3p</code>，但沒有任何官方解釋。「E3+」也沒有官方出處。</li>
+      <li>舊 E3 的正式關站日：只能確定在 2019-09-29 到 2020-10-25 之間。</li>
+      <li>2014-09-01 停用的「舊版 e3」指的是哪一版（附件沒被存檔）。</li>
+      <li>合校後手冊提到的「E3 線上學習系統（舊eCampus）」的實際網址，要登入 E3 才看得到。</li>
+      <li>以 E3 為研究對象、描述系統沿革的學位論文：機構典藏沒有命中。</li>
+    </ol>
+  </section>
+
+  <section class="block" id="sources">
+    <h2>主要來源</h2>
+    <ul class="sources">
+      <li>交大校史館 <a href="https://museum.lib.nycu.edu.tw/?page_id=938">1991–2000</a>、<a href="https://museum.lib.nycu.edu.tw/?page_id=940">2001–2010</a>、<a href="https://museum.lib.nycu.edu.tw/?page_id=942">2011–現今</a></li>
+      <li>E.NCTU〈Profile of E.NCTU〉<a href="https://web.archive.org/web/20010302091059/http://e.nctu.edu.tw/news/Profile.htm">2001-03</a>、<a href="https://web.archive.org/web/20031204104846/http://e.nctu.edu.tw/news/Profile.htm">2003-12</a></li>
+      <li>E.NCTU 首頁 V1.0 公告 <a href="https://web.archive.org/web/20001206215100/http://e.nctu.edu.tw/index_new.htm">2000-12</a></li>
+      <li>e2 eCampus 登入頁 <a href="https://web.archive.org/web/20021010082927/http://e2.nctu.edu.tw:80/eCampus/default.aspx">2002-10-10</a></li>
+      <li>舊 E3 首版 <a href="https://web.archive.org/web/20060227235201/http://e3.nctu.edu.tw:80/NCTU_E3/lms2/Default.aspx">2006-02-27</a></li>
+      <li>DCPC 首頁：<a href="https://web.archive.org/web/20070911051426/http://dcpc.nctu.edu.tw/">2007-09</a>（E2 停用）、<a href="https://web.archive.org/web/20101021205425/http://dcpc.nctu.edu.tw:80/">2010-10</a>（新 e3 上線）、<a href="https://web.archive.org/web/20140707004421/http://dcpc.nctu.edu.tw/">2014-07</a>（舊版 e3 停用）、<a href="https://web.archive.org/web/20171219093122/http://dcpc.nctu.edu.tw/">2017-12</a>（New E3 網址）、<a href="https://web.archive.org/web/20200526020638/https://dcpc.nctu.edu.tw/">2020-05</a>（107 下改版）</li>
+      <li>DCPC〈關於我們〉<a href="https://web.archive.org/web/20070917181432/http://dcpc.nctu.edu.tw:80/aboutus_01.htm">2007</a></li>
+      <li>三趨科技沿革 <a href="http://www.3probe.com.tw/about_milestone.aspx">3probe.com.tw/about_milestone.aspx</a></li>
+      <li>陽明 eCampus 登入頁 <a href="https://web.archive.org/web/20150120004521/http://e3.ym.edu.tw:80/ecampus3p/Learn/LoginPage2/product_login.aspx">2015-01</a></li>
+      <li>e3new 維護頁 <a href="https://web.archive.org/web/20210128080940/https://e3new.nctu.edu.tw/">2021-01-28</a>；e3.nycu 首日 <a href="https://web.archive.org/web/20210130053020/https://e3.nycu.edu.tw/login/index.php">2021-01-30</a>；e3p 首次存檔 <a href="https://web.archive.org/web/20240414071219/https://e3p.nycu.edu.tw/login/index.php">2024-04-14</a></li>
+      <li>教務處【E3 問答集】教師篇 <a href="https://aa.nycu.edu.tw/aa/ch/app/news/view?module=headnews&amp;id=2652&amp;serno=30895784-2cd7-458f-9856-9ecc78ff8668">110-02-24</a></li>
+      <li>112-1 E3 工作坊投影片 <a href="https://www.nycu.edu.tw/aa/ch/app/data/doc?module=nycu0130&amp;detailNo=1161839994642370560&amp;type=s">2023-09</a></li>
+      <li>官方 YouTube：<a href="https://youtu.be/BglQN2327hA">112-2 E3 新版期中工作坊</a>、<a href="https://youtu.be/I6noIrVd7y8">從舊E3到新E3一次搬移整門課程</a></li>
+      <li>完整考證與 60 多條來源：同資料夾的 <code>README.md</code> 與 <code>notes/</code></li>
+    </ul>
+  </section>
+</main>
+<footer><div class="wrap">整理於 2026-10-16。截圖來自 Internet Archive Wayback Machine 與實測；版本範圍與部分日期為推測，已在內文標明。這個檔案內嵌了所有圖片，可以離線開啟。</div></footer>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const FAM = {
+  ecampus:{label:"eCampus（ASP.NET）", v:"--fam-ecampus"},
+  moodle:{label:"Moodle", v:"--fam-moodle"},
+  self:{label:"自行開發（PHP）", v:"--fam-self"},
+  other:{label:"其他廠商", v:"--fam-other"},
+};
+const NS = "http://www.w3.org/2000/svg";
+const $ = s => document.querySelector(s);
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const toYear = d => { const [y,m,dd] = d.split("-").map(Number); return y + ((m||1)-1)/12 + ((dd||1)-1)/365; };
+const el = (tag, attrs={}, parent) => { const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); if (parent) parent.appendChild(n); return n; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* ---------- theme ---------- */
+(function(){
+  const btn = $("#themeBtn"), root = document.documentElement, order = ["auto","light","dark"], names = {auto:"自動",light:"淺色",dark:"深色"};
+  let cur = "auto";
+  try { cur = localStorage.getItem("e3-theme") || "auto"; } catch(e) {}
+  const apply = () => { if (cur === "auto") root.removeAttribute("data-theme"); else root.setAttribute("data-theme", cur); btn.textContent = names[cur]; };
+  apply();
+  btn.addEventListener("click", () => { cur = order[(order.indexOf(cur)+1)%3]; try { localStorage.setItem("e3-theme", cur); } catch(e) {} apply(); renderCharts(); });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", renderCharts);
+})();
+
+/* ---------- tooltip ---------- */
+const tip = $("#tip");
+function showTip(html, ev){ tip.innerHTML = html; tip.style.opacity = 1; moveTip(ev); }
+function moveTip(ev){
+  const pad = 14, r = tip.getBoundingClientRect();
+  let x = ev.clientX + pad, y = ev.clientY + pad;
+  if (x + r.width > innerWidth - 8) x = ev.clientX - r.width - pad;
+  if (y + r.height > innerHeight - 8) y = ev.clientY - r.height - pad;
+  tip.style.left = Math.max(8, x) + "px"; tip.style.top = Math.max(8, y) + "px";
+}
+function hideTip(){ tip.style.opacity = 0; }
+function bindTip(node, html){
+  node.addEventListener("pointerenter", e => showTip(html, e));
+  node.addEventListener("pointermove", moveTip);
+  node.addEventListener("pointerleave", hideTip);
+}
+
+/* ---------- hero ---------- */
+(function(){
+  const ol = $("#lineage");
+  DATA.gens.forEach((g, i) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<button type="button" data-gen="${g.id}"><span class="sw" style="background:var(${FAM[g.family].v})"></span>${esc(g.short)}</button>` + (i < DATA.gens.length-1 ? `<span class="arrow" aria-hidden="true">→</span>` : "");
+    ol.appendChild(li);
+  });
+  ol.addEventListener("click", e => { const b = e.target.closest("button[data-gen]"); if (b) { selectGen(b.dataset.gen, 0); $("#versions").scrollIntoView(); } });
+  const stats = [
+    ["6", "代交大 E3 系列平台"],
+    ["26 年", "2000-11 E.NCTU V1.0 到今天"],
+    ["60", "個 eCampus III build 被存檔"],
+    ["1", "台舊站還在線上：e3.nycu.edu.tw"],
+  ];
+  $("#stats").innerHTML = stats.map(([v,k]) => `<div class="stat"><div class="v">${v}</div><div class="k">${k}</div></div>`).join("");
+})();
+
+/* ---------- gantt ---------- */
+function renderGantt(){
+  const host = $("#gantt"); host.innerHTML = "";
+  $("#ganttLegend").innerHTML = ["ecampus","moodle","self","other"].map(f => `<span><i style="background:var(${FAM[f].v})"></i>${FAM[f].label}</span>`).join("") + `<span><i class="hatch"></i>已非主平台，伺服器／存檔仍在</span>`;
+  const W = Math.max(host.clientWidth, 760), labelW = 168, right = 14, top = 30, rowH = 34, grpH = 30;
+  const x0 = 2000, x1 = 2027, plotW = W - labelW - right;
+  const X = y => labelW + (y - x0) / (x1 - x0) * plotW;
+  let rows = [], lastGrp = null, y = top;
+  DATA.rows.forEach(r => { if (r.grp !== lastGrp) { rows.push({grpHead:r.grp, y}); y += grpH; lastGrp = r.grp; } rows.push({...r, y}); y += rowH; });
+  const H = y + 40;
+  const svg = el("svg", {width:W, height:H, viewBox:`0 0 ${W} ${H}`, role:"img", "aria-label":"E3 各代平台時間軸"}, host);
+  const defs = el("defs", {}, svg);
+  Object.keys(FAM).forEach(f => {
+    const p = el("pattern", {id:"hatch-"+f, width:6, height:6, patternUnits:"userSpaceOnUse", patternTransform:"rotate(45)"}, defs);
+    el("rect", {width:6, height:6, fill:css(FAM[f].v), opacity:.16}, p);
+    el("line", {x1:0, y1:0, x2:0, y2:6, stroke:css(FAM[f].v), "stroke-width":2}, p);
+  });
+  for (let yr = 2000; yr <= 2026; yr += 2) {
+    el("line", {x1:X(yr), x2:X(yr), y1:top-6, y2:H-36, stroke:css("--grid"), "stroke-width":1}, svg);
+    const t = el("text", {x:X(yr), y:top-12, "text-anchor":"middle", "font-size":12, fill:css("--muted")}, svg); t.textContent = yr;
+  }
+  DATA.events.forEach((ev, i) => {
+    const ex = X(toYear(ev.d));
+    el("line", {x1:ex, x2:ex, y1:top-6, y2:H-30, stroke:css("--axis"), "stroke-width":1.5, "stroke-dasharray":"3 4"}, svg);
+    const t = el("text", {x:ex, y:H-14 + (i%2 ? 0 : -12), "text-anchor":"middle", "font-size":12, fill:css("--ink-2")}, svg); t.textContent = ev.t;
+  });
+  rows.forEach(r => {
+    if (r.grpHead) { const t = el("text", {x:0, y:r.y+20, "font-size":12, "font-weight":600, fill:css("--muted")}, svg); t.textContent = r.grpHead; return; }
+    const cy = r.y + rowH/2, g = el("g", {}, svg), col = css(FAM[r.fam].v);
+    const lab = el("text", {x:0, y:cy-2, "font-size":14, "font-weight":600, fill:css("--ink")}, g); lab.textContent = r.label;
+    const hs = el("text", {x:0, y:cy+13, "font-size":11, fill:css("--muted")}, g); hs.textContent = r.host;
+    const xs = X(toYear(r.s)), xe = X(toYear(r.e));
+    el("rect", {x:xs, y:cy-7, width:Math.max(3, xe-xs), height:14, rx:4, fill:col}, g);
+    let tipHtml = `<b>${esc(r.label)}</b> <span class="m">${esc(r.host)}</span><br><span class="sw" style="background:${col}"></span>${FAM[r.fam].label}<br>${r.s} → ${r.e}`;
+    if (r.tail) {
+      const xt = X(toYear(r.tail));
+      el("rect", {x:xe+2, y:cy-7, width:Math.max(2, xt-xe-2), height:14, rx:4, fill:`url(#hatch-${r.fam})`}, g);
+      tipHtml += `<br><span class="m">之後到 ${r.tail}：${esc(r.tailNote)}</span>`;
+    }
+    const hit = el("rect", {x:0, y:r.y+1, width:W, height:rowH-2, fill:"transparent", style: r.gen ? "cursor:pointer" : ""}, g);
+    bindTip(hit, tipHtml + (r.gen ? `<br><span class="m">點一下看截圖</span>` : ""));
+    if (r.gen) hit.addEventListener("click", () => { selectGen(r.gen, 0); $("#versions").scrollIntoView(); });
+    hit.addEventListener("pointerenter", () => hit.setAttribute("fill", css("--grid")+"66"));
+    hit.addEventListener("pointerleave", () => hit.setAttribute("fill", "transparent"));
+    g.insertBefore(hit, g.firstChild);
+  });
+}
+
+/* ---------- version browser ---------- */
+let curGen = 0, curShot = 0;
+(function(){
+  const tabs = $("#tabs");
+  DATA.gens.forEach((g, i) => {
+    const b = document.createElement("button");
+    b.className = "tab"; b.type = "button"; b.setAttribute("role","tab"); b.dataset.gen = g.id;
+    b.innerHTML = `<span class="sw" style="background:var(${FAM[g.family].v})"></span>${esc(g.short)}`;
+    b.addEventListener("click", () => selectGen(g.id, 0));
+    tabs.appendChild(b);
+  });
+  $("#prev").addEventListener("click", () => showShot(curShot-1));
+  $("#next").addEventListener("click", () => showShot(curShot+1));
+  document.addEventListener("keydown", e => {
+    if (e.target.closest("input,textarea")) return;
+    const r = $("#versions").getBoundingClientRect();
+    if (r.bottom < 0 || r.top > innerHeight) return;
+    if (e.key === "ArrowLeft") showShot(curShot-1);
+    if (e.key === "ArrowRight") showShot(curShot+1);
+  });
+})();
+function selectGen(id, shotIdx){
+  curGen = DATA.gens.findIndex(g => g.id === id);
+  const g = DATA.gens[curGen];
+  document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", t.dataset.gen === id));
+  $("#facts").innerHTML =
+    (g.logo ? `<div class="logo"><img src="${g.logo}" alt="${esc(g.short)} logo"></div>` : "") +
+    `<h3>${esc(g.name)}</h3><div class="host"><code>${esc(g.host)}</code></div>` +
+    `<dl><dt>期間</dt><dd>${esc(g.period)}</dd><dt>維運</dt><dd>${esc(g.who)}</dd><dt>技術</dt><dd>${esc(g.tech)}</dd></dl>` +
+    `<h4>重點</h4><ul>${g.facts.map(f => `<li>${esc(f)}</li>`).join("")}</ul>` +
+    `<h4>網址與路徑</h4><ul class="paths">${g.paths.map(p => `<li>${esc(p)}</li>`).join("")}</ul>`;
+  $("#scrub").innerHTML = g.shots.map((s, i) => `<button type="button" data-i="${i}">${esc(s.date)}</button>`).join("");
+  $("#scrub").onclick = e => { const b = e.target.closest("button"); if (b) showShot(+b.dataset.i); };
+  showShot(shotIdx);
+}
+function showShot(i){
+  const g = DATA.gens[curGen];
+  if (i < 0 || i >= g.shots.length) return;
+  curShot = i; const s = g.shots[i];
+  const img = $("#shot"); img.src = s.img; img.alt = `${g.short} ${s.date}：${s.cap}`;
+  $("#frame").scrollTop = 0;
+  const isWb = s.src.includes("web.archive.org");
+  $("#cap").innerHTML = `<span class="d">${esc(s.date)}</span>${esc(s.cap)}<a class="src" href="${esc(s.src)}" target="_blank" rel="noopener">來源：${isWb ? "Wayback 存檔" : esc(s.src.replace(/^https?:\/\//,"").slice(0,60))} ↗</a>`;
+  $("#prev").disabled = i === 0; $("#next").disabled = i === g.shots.length-1;
+  document.querySelectorAll("#scrub button").forEach(b => b.setAttribute("aria-current", +b.dataset.i === i));
+}
+
+/* ---------- eCampus III builds ---------- */
+function renderBuilds(){
+  const host = $("#buildChart"); host.innerHTML = "";
+  const W = Math.max(host.clientWidth, 720), left = 64, right = 24, top = 40, bottom = 34;
+  const minors = ["1.5","1.4","1.3","1.2","1.1","1.0"], rowH = 34, H = top + minors.length*rowH + bottom;
+  const x0 = 2006, x1 = 2020.3, X = y => left + (y-x0)/(x1-x0)*(W-left-right);
+  const Y = m => top + minors.indexOf(m)*rowH + rowH/2;
+  const svg = el("svg", {width:W, height:H, role:"img", "aria-label":"eCampus III build 版本隨時間分布"}, host);
+  const lastBuild = toYear("2014-02-26");
+  el("rect", {x:X(lastBuild), y:top, width:X(2019.71)-X(lastBuild), height:minors.length*rowH, fill:css("--grid"), opacity:.5}, svg);
+  const nt = el("text", {x:(X(lastBuild)+X(2019.71))/2, y:Y("1.2")+4, "text-anchor":"middle", "font-size":12, fill:css("--muted")}, svg);
+  nt.textContent = "沒有新 build，沿用 v1.5.02193.01450";
+  minors.forEach(m => {
+    el("line", {x1:left, x2:W-right, y1:Y(m), y2:Y(m), stroke:css("--grid")}, svg);
+    const t = el("text", {x:left-10, y:Y(m)+4, "text-anchor":"end", "font-size":12, fill:css("--ink-2"), "font-variant-numeric":"tabular-nums"}, svg);
+    t.textContent = m === "1.0" ? "NCTU E3" : "v" + m;
+  });
+  for (let yr = 2006; yr <= 2020; yr += 2) {
+    const t = el("text", {x:X(yr), y:H-12, "text-anchor":"middle", "font-size":12, fill:css("--muted")}, svg); t.textContent = yr;
+    el("line", {x1:X(yr), x2:X(yr), y1:top+minors.length*rowH, y2:top+minors.length*rowH+5, stroke:css("--axis")}, svg);
+  }
+  el("line", {x1:left, x2:W-right, y1:top+minors.length*rowH, y2:top+minors.length*rowH, stroke:css("--axis")}, svg);
+  const endX = X(toYear("2019-09-14"));
+  el("line", {x1:endX, x2:endX, y1:top-4, y2:top+minors.length*rowH, stroke:css("--critical"), "stroke-width":1.5}, svg);
+  const et = el("text", {x:endX-4, y:top-8, "text-anchor":"end", "font-size":11.5, fill:css("--ink-2")}, svg); et.textContent = "最後正常存檔 2019-09";
+  DATA.paths.forEach((p, i) => {
+    const px = X(toYear(p.d));
+    el("line", {x1:px, x2:px, y1:top-4, y2:top+minors.length*rowH, stroke:css("--axis"), "stroke-dasharray":"3 4"}, svg);
+    if (p.t === "/LMS31") return;
+    const t = el("text", {x:px+4, y:top-8 - (i%2)*14 + 14*0, "font-size":11.5, fill:css("--ink-2")}, svg);
+    t.setAttribute("y", top - 8 - (i % 2 ? 14 : 0)); t.textContent = p.t;
+  });
+  const col = css("--fam-ecampus"), surf = css("--surface");
+  DATA.builds.forEach((b, i) => {
+    const cx = X(toYear(b.d)), cy = Y(b.minor);
+    el("circle", {cx, cy, r:5, fill:col, stroke:surf, "stroke-width":2}, svg);
+    const hit = el("circle", {cx, cy, r:11, fill:"transparent"}, svg);
+    bindTip(hit, `<b>${esc(b.title)}</b><br><span class="m">Wayback 存檔日：${b.d}</span>`);
+  });
+  // table
+  $("#buildTable").innerHTML = `<table class="data"><thead><tr><th>存檔日期</th><th>頁面標題（版本）</th></tr></thead><tbody>${DATA.builds.map(b => `<tr><td class="num">${b.d}</td><td><code>${esc(b.title)}</code></td></tr>`).join("")}</tbody></table>`;
+}
+
+/* ---------- Moodle ---------- */
+function renderMoodle(){
+  const host = $("#moodleChart"); host.innerHTML = "";
+  const W = Math.max(host.clientWidth, 720), left = 150, right = 16, top = 26, rowH = 66, bottom = 22;
+  const H = top + DATA.moodle.length*rowH + bottom, x0 = 2017.5, x1 = 2027;
+  const X = y => left + (y-x0)/(x1-x0)*(W-left-right);
+  const svg = el("svg", {width:W, height:H, role:"img", "aria-label":"三個 Moodle 站的版本區間"}, host);
+  for (let yr = 2018; yr <= 2026; yr++) {
+    el("line", {x1:X(yr), x2:X(yr), y1:top-6, y2:H-bottom, stroke:css("--grid")}, svg);
+    const t = el("text", {x:X(yr), y:top-12, "text-anchor":"middle", "font-size":12, fill:css("--muted")}, svg); t.textContent = yr;
+  }
+  const surf = css("--surface");
+  DATA.moodle.forEach((row, i) => {
+    const by = top + i*rowH + 30;
+    const lab = el("text", {x:0, y:by+5, "font-size":13, "font-weight":600, fill:css("--ink")}, svg); lab.textContent = row.host;
+    let prevRight = -Infinity;
+    row.segs.forEach(s => {
+      const xs = X(toYear(s.s)), xe = X(toYear(s.e));
+      el("rect", {x:xs+1, y:by-6, width:Math.max(3, xe-xs-2), height:12, rx:4, fill:css("--ord-"+s.lvl)}, svg);
+      const t = el("text", {x:xs+2, y:by-12, "font-size":12, fill:css("--ink-2")}, svg); t.textContent = s.v;
+      const tw = t.getComputedTextLength();
+      if (xs + 2 < prevRight + 8) t.setAttribute("y", by + 22);   // collides with previous label: drop below the bar
+      else prevRight = xs + 2 + tw;
+      const hit = el("rect", {x:xs, y:by-24, width:Math.max(8, xe-xs), height:50, fill:"transparent"}, svg);
+      bindTip(hit, `<b>${esc(row.host)}</b><br>Moodle ${esc(s.v)}（推測）<br><span class="m">${s.s} → ${s.e}${s.note ? "<br>" + esc(s.note) : ""}</span>`);
+    });
+    void surf;
+  });
+}
+
+/* ---------- alive table ---------- */
+(function(){
+  const ok = `<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="var(--good)"/><path d="M3.5 6.2 5.3 8l3.2-3.6" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>`;
+  const no = `<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="none" stroke="var(--muted)" stroke-width="1.5"/><path d="M4 4l4 4M8 4 4 8" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round"/></svg>`;
+  const rows = [
+    [ok+"在線（被轉址）", "e3.nycu.edu.tw", "2021–2024 的 E3。Moodle 還在跑，Web Service 也有回應；登入頁 0 秒轉到 e3p，最後一次改版 2024-07-15。"],
+    [ok+"在線", "e3p.nycu.edu.tw", "現行 E3@NYCU。"],
+    [ok+"在線", "ocw.nycu.edu.tw", "開放式課程。平台是新的 WordPress，但首頁還放著交大時期的課程，例如 103 學年的微積分。"],
+    [ok+"在線", "video.ocw.nycu.edu.tw", "只顯示 IIS 預設頁。IP 140.113.8.88 就是 2002 年 e2 用的位址。"],
+    [ok+"在線", "eportfolio.nycu.edu.tw", "新版 SPA，不是 2011–2014 年的交大版。"],
+    [no+"NXDOMAIN", "e / e2 / e3 / e3new / dcpc / eportfolio / ocw / moodle .nctu.edu.tw", "DNS 紀錄已刪除，用 1.1.1.1 和 8.8.8.8 交叉確認過。"],
+    [no+"NXDOMAIN", "*.ym.edu.tw 所有數位學習主機", "連 www.ym.edu.tw 都沒有了。"],
+    [ok+"在線", "farewell.cs.nctu.edu.tw、prevexam.dece、nycusci.math、applycar、nctu-alumni-voice.sec 等", "全量掃描順帶發現、還掛著「交通大學」名號的老網站，和 E3 無關。"],
+  ];
+  $("#aliveTable").innerHTML = `<table class="data"><thead><tr><th>狀態</th><th>主機</th><th>說明</th></tr></thead><tbody>${rows.map(r => `<tr><td><span class="status">${r[0]}</span></td><td><code>${esc(r[1])}</code></td><td>${esc(r[2])}</td></tr>`).join("")}</tbody></table>`;
+})();
+
+document.querySelectorAll(".toggle-table").forEach(b => b.addEventListener("click", () => {
+  const t = document.getElementById(b.dataset.target); t.hidden = !t.hidden; b.textContent = t.hidden ? "以表格檢視" : "收起表格";
+}));
+
+function renderCharts(){ renderGantt(); renderBuilds(); renderMoodle(); }
+let rz; addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(renderCharts, 120); });
+renderCharts();
+selectGen("e", 2);
+</script>
+</body>
+</html>
